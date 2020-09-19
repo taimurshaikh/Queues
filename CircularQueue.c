@@ -50,9 +50,7 @@ int ask(int *arr, int rear)
     int val;
     printf("Number to add: ");
     scanf("%i", &val);
-    printf("initial rear is %d \n", rear);
     rear = enqueue(arr, rear, val);
-    printf("enqueued rear is %d \n", rear);
   }
 
   for (int i = 0; i < length; i++)

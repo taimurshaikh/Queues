@@ -12,13 +12,13 @@ typedef struct node
 node;
 
 int enqueue(node*, int);
-node* dequeue(node*);
+node *dequeue(node*);
+
+// List of size 0
+node *list = NULL;
 
 int main(void)
 {
-    // List of size 0
-    node *list = NULL;
-
     // Add value to list
     node *n = malloc(sizeof(node));
     if (n == NULL)
@@ -32,11 +32,13 @@ int main(void)
     enqueue(list, 2);
     enqueue(list, 3);
     enqueue(list, 4);
+
     //printf("%i\n", list->next);
     for (node *tmp = list; tmp != NULL; tmp = tmp->next)
     {
         printf("%i\n", tmp->value);
     }
+    printf("\n");
 
     list = dequeue(list);
 
@@ -85,9 +87,9 @@ int enqueue(node *list, int value)
   return 0;
 }
 
-node* dequeue(node *list)
+node *dequeue(node *list)
 {
   // Makes the head of the list point to the second value of the list, orphaning the first one
-  node *tmp = list->next;
-  return tmp;
+  list = list->next;
+  return list;
 }
