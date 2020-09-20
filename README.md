@@ -1,2 +1,2 @@
 # Queues
-C Programs that implement a Linear, Circular(WIP) and Priority(WIP) Queue
+C Programs that implement a Linear, Circular and Priority(WIP) Queue
